@@ -1,9 +1,6 @@
 package org.example.springPlayground.model;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 
 @Entity
 @Table(name = "movies")
@@ -11,9 +8,12 @@ public class Movie {
 
     @Id
     @Column(name = "id_movie")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
     @Column(name = "movie_name")
     private String name;
+
     @Column(name = "movie_rating")
     private double rating;
 
@@ -50,7 +50,4 @@ public class Movie {
     public void setRating(double rating) {
         this.rating = rating;
     }
-
-
-
 }
