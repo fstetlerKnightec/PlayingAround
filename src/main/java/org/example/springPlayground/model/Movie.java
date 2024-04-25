@@ -1,31 +1,37 @@
 package org.example.springPlayground.model;
 
-import org.springframework.context.annotation.Scope;
-import org.springframework.stereotype.Component;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 
-@Component
-@Scope("prototype")
+@Entity
+@Table(name = "movies")
 public class Movie {
 
-    private int id;
+    @Id
+    @Column(name = "id_movie")
+    private Long id;
+    @Column(name = "movie_name")
     private String name;
+    @Column(name = "movie_rating")
     private double rating;
 
     public Movie() {
 
     }
 
-    public Movie(int id, String name, double rating) {
+    public Movie(Long id, String name, double rating) {
         this.id = id;
         this.name = name;
         this.rating = rating;
     }
 
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
