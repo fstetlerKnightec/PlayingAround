@@ -23,7 +23,7 @@ public class MovieService {
     }
 
     public Optional<Movie> getMovieById(Long id) {
-        return movieRepo.findMovieById(id);
+        return movieRepo.findById(id);
     }
 
     public Movie addMovie(Movie movie) {

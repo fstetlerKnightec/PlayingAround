@@ -30,7 +30,11 @@ public class MovieController {
     }
 
     @PostMapping("/addMovie")
-    public Movie addMovie(Movie movie) {
-        return movieService.addMovie(movie);
+    public Movie addMovie(@RequestBody Movie movie) {
+        Movie newMovie = new Movie();
+        newMovie.setId(movie.getId());
+        newMovie.setName(movie.getName());
+        newMovie.setRating(movie.getRating());
+        return movieService.addMovie(newMovie);
     }
 }
