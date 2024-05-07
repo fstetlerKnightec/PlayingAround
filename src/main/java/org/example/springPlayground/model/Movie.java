@@ -14,17 +14,17 @@ public class Movie {
     @Column(name = "movie_name")
     private String name;
 
-    @Column(name = "movie_rating")
-    private double rating;
+    @Column(name = "average_movie_rating")
+    private double averageRating;
 
     public Movie() {
 
     }
 
-    public Movie(Long id, String name, double rating) {
-        this.id = id;
+    public Movie( String name, double averageRating) {
+
         this.name = name;
-        this.rating = rating;
+        this.averageRating = averageRating;
     }
 
     public Long getId() {
@@ -43,11 +43,11 @@ public class Movie {
         this.name = name;
     }
 
-    public double getRating() {
-        return rating;
+    public double getAverageRating() {
+        return averageRating;
     }
 
-    public void setRating(double rating) {
-        this.rating = rating;
+    public void setAverageRating(double averageRating) {
+        this.averageRating = averageRating;
     }
 }

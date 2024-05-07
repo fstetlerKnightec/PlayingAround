@@ -29,12 +29,21 @@ public class MovieController {
         return movieService.getMovieById(id);
     }
 
-    @PostMapping("/addMovie")
-    public Movie addMovie(@RequestBody Movie movie) {
-        Movie newMovie = new Movie();
-        newMovie.setId(movie.getId());
-        newMovie.setName(movie.getName());
-        newMovie.setRating(movie.getRating());
-        return movieService.addMovie(newMovie);
-    }
+//    @PostMapping("/addMovie")
+//    public Movie addMovie(@RequestBody Movie movie) {
+//        Movie newMovie = new Movie();
+//        newMovie.setId(movie.getId());
+//        newMovie.setName(movie.getName());
+//        newMovie.setAverageRating(movie.getAverageRating());
+//        return movieService.addMovie(newMovie);
+//    }
+//
+//    @PutMapping("/updateMovie")
+//    public Movie updateMovie(@RequestBody Movie movieInput) {
+//        Optional<Movie> movieToUpdate = movieService.getMovieById(movieInput.getId());
+//        movieToUpdate.get().setName(movieInput.getName());
+//        movieToUpdate.get().setAverageRating(movieInput.getAverageRating());
+//        return movieToUpdate.get();
+//    }
+
 }
