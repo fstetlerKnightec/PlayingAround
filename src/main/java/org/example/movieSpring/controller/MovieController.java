@@ -1,7 +1,7 @@
-package org.example.springPlayground.controller;
+package org.example.movieSpring.controller;
 
-import org.example.springPlayground.model.Movie;
-import org.example.springPlayground.service.MovieService;
+import org.example.movieSpring.model.Movie;
+import org.example.movieSpring.service.MovieService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -29,15 +29,11 @@ public class MovieController {
         return movieService.getMovieById(id);
     }
 
-//    @PostMapping("/addMovie")
-//    public Movie addMovie(@RequestBody Movie movie) {
-//        Movie newMovie = new Movie();
-//        newMovie.setId(movie.getId());
-//        newMovie.setName(movie.getName());
-//        newMovie.setAverageRating(movie.getAverageRating());
-//        return movieService.addMovie(newMovie);
-//    }
-//
+    @PostMapping("/addMovie")
+    public Movie addMovie(@RequestBody Movie movie) {
+        return movieService.addMovie(movie);
+    }
+
 //    @PutMapping("/updateMovie")
 //    public Movie updateMovie(@RequestBody Movie movieInput) {
 //        Optional<Movie> movieToUpdate = movieService.getMovieById(movieInput.getId());

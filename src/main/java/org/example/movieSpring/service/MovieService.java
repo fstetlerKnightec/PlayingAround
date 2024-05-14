@@ -1,7 +1,7 @@
-package org.example.springPlayground.service;
+package org.example.movieSpring.service;
 
-import org.example.springPlayground.model.Movie;
-import org.example.springPlayground.repo.MovieRepo;
+import org.example.movieSpring.model.Movie;
+import org.example.movieSpring.repo.MovieRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -24,5 +24,9 @@ public class MovieService {
 
     public Optional<Movie> getMovieById(Long id) {
         return movieRepo.findById(id);
+    }
+
+    public Movie addMovie(Movie movie) {
+        return movieRepo.save(movie);
     }
 }
