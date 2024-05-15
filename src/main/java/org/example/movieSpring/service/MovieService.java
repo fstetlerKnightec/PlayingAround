@@ -29,4 +29,20 @@ public class MovieService {
     public Movie addMovie(Movie movie) {
         return movieRepo.save(movie);
     }
+
+    public Movie updateMovie(Movie movie) throws Exception {
+        Optional<Movie> newMovie = getMovieById(movie.getId());
+        if (newMovie.isEmpty()) {
+            throw new NullPointerException("Could not find object with that ID"); // Suggestion on better Exception?
+        }
+        newMovie.get().setTitle(movie.getTitle());
+        newMovie.get().setRelease_year(movie.getRelease_year());
+        return movieRepo.save(newMovie.get());
+    }
+
+    public void deleteMovie(Long id) {
+        movieRepo.deleteById(id);
+        System.out.println("Successfully deleted movie with ID " + id);
+    }
+
 }

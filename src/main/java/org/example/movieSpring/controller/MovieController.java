@@ -34,12 +34,13 @@ public class MovieController {
         return movieService.addMovie(movie);
     }
 
-//    @PutMapping("/updateMovie")
-//    public Movie updateMovie(@RequestBody Movie movieInput) {
-//        Optional<Movie> movieToUpdate = movieService.getMovieById(movieInput.getId());
-//        movieToUpdate.get().setName(movieInput.getName());
-//        movieToUpdate.get().setAverageRating(movieInput.getAverageRating());
-//        return movieToUpdate.get();
-//    }
+    @PutMapping("/updateMovie")
+    public Movie updateMovie(@RequestBody Movie movie) throws Exception {
+        return movieService.updateMovie(movie);
+    }
 
+    @DeleteMapping("/deleteMovie/{id}")
+    public void deleteMovie(@PathVariable Long id) {
+        movieService.deleteMovie(id);
+    }
 }
