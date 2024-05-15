@@ -30,7 +30,7 @@ public class MovieService {
         return movieRepo.save(movie);
     }
 
-    public Movie updateMovie(Movie movie) throws Exception {
+    public Movie updateMovie(Movie movie) {
         Optional<Movie> newMovie = getMovieById(movie.getId());
         if (newMovie.isEmpty()) {
             throw new NullPointerException("Could not find object with that ID"); // Suggestion on better Exception?

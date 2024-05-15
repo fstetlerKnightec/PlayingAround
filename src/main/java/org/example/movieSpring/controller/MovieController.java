@@ -35,7 +35,7 @@ public class MovieController {
     }
 
     @PutMapping("/updateMovie")
-    public Movie updateMovie(@RequestBody Movie movie) throws Exception {
+    public Movie updateMovie(@RequestBody Movie movie) {
         return movieService.updateMovie(movie);
     }
 
